@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+
+        @media only screen and (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                text-align: center; /* Center-align text for smaller screens */
+                }
+
+            .header {
+                font-size: 1.5em; /* Adjust font size for headers on smaller screens */
+                margin-bottom: 10px; /* Add some space below headers */
+                }
+
+            .paragraph {
+                font-size: 1em; /* Adjust font size for paragraphs on smaller screens */
+                margin-bottom: 15px; /* Add some space below paragraphs */
+                }
+
+            .button {
+                width: 100%; /* Make buttons full-width for better tap targets */
+                }
+
+    /* Add any other necessary styles for smaller screens */
+        }
+            
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #EED9C4;
+        }
+
+        .header {
+            width: 100%;
+            padding-right: 580px;
+            background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B);
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            font-size: 25px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            height: 20vh;
+            letter-spacing: 0px;
+            text-transform: none;
+            
+        }
+
+        .header-logo {
+           height : 55px;
+           margin-right: 10px;
+        }
+
+        .footer {
+            width: 100%;
+            padding: 15px;
+            height: 80px;
+            height: 10vh;
+            background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B); /* Brown color */
+            color: #fff;
+            font-weight: 300;
+            font-size: 10px;
+            text-align: center;
+            position: sticky;
+            bottom: 0%;
+        }
+
+        .container {
+            position: relative;
+            padding: 120px;
+            background: #EED9C4; /* Gradient background */
+            width: 100%;
+            height: 80vh;
+
+        }
+
+        .cont {
+            position: relative;
+            font-weight: 600;
+            font-size: 30px;
+            height: max-content;
+            justify-content: center;
+            padding: 30px;
+            background-color: #fff;
+            text-align: center;
+            width: auto;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .text1 {
+            margin-bottom: 20px;
+            font-weight: 500;
+
+            
+        }
+
+        label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            background-color: #002426;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d4f;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="header"><img class="header-logo" src="{% static 'Logo.png' %}" alt="Logo">PhishGuard
+    </div>
+    <div class="container">
+        <div class="cont">
+            <h5>URL</h5>
+            <h6 style="color: red;">{{ purl }}</h6><br><br>
+            <p style="color: red;"><b>Oops!! Your URL is phished!! <br>
+                It is unsafe to use</b></p>
+            <p></p>
+            
+        </div>
+    </div>
+
+    {% if result %}
+    {% endif %}
+
+    <div class="footer">
+        <br>&copy; All Rights Reserved to PhishGuard</div>
+  
+</body>
+</html>

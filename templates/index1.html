@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #EED9C4; /* Beige color */
+        }
+
+        .header {
+            width: 100%;
+            padding-right: 580px;
+            background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B);
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            font-size: 25px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            height: 16vh;
+            letter-spacing: 0px;
+            text-transform: none;
+
+            
+        }
+
+        .header-logo {
+           height : 55px;
+           margin-right: 10px;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: none; /* Marquee background color */
+            padding: 10px;
+            text-align: center;
+            -webkit-text-fill-color: #7B3F00;
+        }
+
+        .marquee-text {
+            white-space: nowrap;
+            font-size: 30px;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .footer {
+            width: 100%;
+            padding: 15px;
+            height: 75px;
+            
+            background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B);
+            color: #fff;
+            font-weight: 300;
+            font-size: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0%;
+        }
+
+        .container {
+            position: relative;
+            padding: 25px;
+            background: #EED9C4;
+            width: 100%;
+            height: 60vh;
+        }
+
+        .cont {
+            position: relative;
+            font-weight: 600;
+            font-size: 18px;
+            height: 50vh;
+            justify-content: center;
+            padding-bottom: 30px;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: #fff;
+            text-align: center;
+            width: 40%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .text1 {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            background-color: #8B4513; /* Brown color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #A0522D; /* Darker brown color on hover */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .header {
+                padding-right: 5%;
+            }
+
+            .marquee-text {
+                font-size: 1.5em;
+            }
+
+            .footer {
+                font-size: 0.8em;
+                
+            }
+
+            .container {
+                padding: 10%;
+            }
+
+            .cont {
+                font-size: 0.9em;
+                padding: 10%;
+                width: 95%;
+            }
+
+            .text1,
+            label,
+            input[type="text"],
+            input[type="submit"] {
+                font-size: 0.9em;
+            }
+}
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="header"><img class="header-logo" src="{% static 'Logo.png' %}" alt="Logo" href = "index.html">PhishGuard
+    </div>
+    <div class="marquee-container">
+        <div class="marquee-text">
+            Enter the link to determine whether its phished or not
+        </div>
+    </div>
+    <div class="container">
+        <div class="cont">
+            <form action="detect/" method="post">
+                {% csrf_token %}
+                <br>
+                <h1 style="color: #8B0000;" >PhishGuard</h1>
+                <br>
+                <h6 style="color: #B7410E;">Your first line of defence against phishing threats!!!</h6>
+                <div class="text1">
+                    <br><br>
+                    <input type="text" id="purl" name="purl" required placeholder="Enter the link to detect">
+                </div>
+                <input type="submit" value="Detect">
+                <br>
+                <br>
+                
+                <br>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <br>&copy; All Rights Reserved to PhishGuard
+    </div>
+</body>
+</html>

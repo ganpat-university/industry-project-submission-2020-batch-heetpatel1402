@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Phishing Information - PhishGuard</title>
+    <style>
+
+        @media only screen and (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                text-align: center; /* Center-align text for smaller screens */
+                }
+
+            .header {
+                font-size: 1.5em; /* Adjust font size for headers on smaller screens */
+                margin-bottom: 10px; /* Add some space below headers */
+                }
+
+            .paragraph {
+                font-size: 1em; /* Adjust font size for paragraphs on smaller screens */
+                margin-bottom: 15px; /* Add some space below paragraphs */
+                }
+
+            .button {
+                width: 100%; /* Make buttons full-width for better tap targets */
+                }
+
+    /* Add any other necessary styles for smaller screens */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-frame {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            color: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #EED9C4;
+        }
+
+        header {
+            background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B);
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 90px; /* Adjust the size as needed */
+        }
+
+        main {
+            background-color: #EED9C4;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .left-frame,
+        .right-frame {
+            margin-top: 30px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .left-frame {
+            background-color: #FFF8E7;
+            
+        }
+
+        .right-frame {
+            background-color: #FFF8E7;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+
+        .learn-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #7B3F00;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .try-phishing-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #C4A484;
+            color: #6E260E;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .slogan {
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'Logo.png' %}" alt="Logo">
+            <h1>PhishGuard</h1>
+            <h class="slogan">Your first line of defence against phishing threats!!!</h2>
+        </div>
+    </header>
+    <main>
+        <div class="content-container">
+            <div class="left-frame">
+                <h2>Phishing Information</h2>
+                <p>
+                    Phishing is a type of cyber attack where attackers use deceptive emails, websites, or other means 
+                    to trick individuals into providing sensitive information such as usernames, passwords, or financial details. 
+                    To protect yourself from phishing:
+                    <ul>
+                        <li>Be cautious about clicking on links or downloading attachments from unknown sources.</li>
+                        <li>Verify the legitimacy of emails, especially those requesting sensitive information.</li>
+                        <li>Use strong, unique passwords and enable two-factor authentication where possible.</li>
+                        <li>Keep your software and security tools up to date to protect against known vulnerabilities.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <title>PhishGuard</title>
+</head>
+<style>
+    @media only screen and (max-width: 768px) {
+        .content-container {
+            flex-direction: column;
+            text-align: center; /* Center-align text for smaller screens */
+            }
+
+        .header {
+            font-size: 1.5em; /* Adjust font size for headers on smaller screens */
+            margin-bottom: 10px; /* Add some space below headers */
+            }
+
+        .paragraph {
+            font-size: 1em; /* Adjust font size for paragraphs on smaller screens */
+            margin-bottom: 15px; /* Add some space below paragraphs */
+            }
+
+        .button {
+            width: 100%; /* Make buttons full-width for better tap targets */
+            }
+
+    /* Add any other necessary styles for smaller screens */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #EED9C4;
+    }
+
+    header {
+        background: linear-gradient(to right, #6E260E, #7B3F00,  #C19A6B);
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container img {
+        width: 90px; /* Adjust the size as needed */
+    }
+
+    main {
+        background-color: #EED9C4;
+    }
+
+    .content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .left-frame,
+    .right-frame {
+        margin-top: 30px;
+        padding: 20px;
+        flex: 1;
+    }
+
+    .left-frame {
+        background-color: #FFF8E7;
+        
+    }
+
+    .right-frame {
+        background-color: #FFF8E7;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .learn-more-button,
+    .try-phishing-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        text-decoration: none;
+    }
+
+    .learn-more-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #7B3F00;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .try-phishing-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #C4A484;
+        color: #6E260E;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .slogan {
+        font-style: italic;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    {% load static %}
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'Logo.png' %}" alt="Logo">
+            <h1>PhishGuard</h1>
+            <p class="slogan">Your first line of defence against phishing threats!!!</p>
+        </div>
+    </header>
+    <main>
+        <div class="content-container">
+            <div class="left-frame">
+                <h2 style="color: #8B0000;">Defending You from Deceptive Links, Every Click, Every Time.</h2>
+                <p>Learn about phishing and how to protect yourself from online scams.</p>
+                <div class="buttons">
+                    <a href="/learnmore"><input type="submit" value = "Learn More" class="learn-more-button"></a></form>
+                    <a href="/index1"><input type="submit" value = "Try PhishGuard" class="try-phishing-button"></a></form>
+                    
+                </div>
+            </div>
+            <div class="right-frame">
+                <!-- Embed YouTube video here -->
+                <iframe width="100%" height="300"  src="{% static 'phish2.gif' %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
